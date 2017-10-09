@@ -1,5 +1,7 @@
 # WebSecurity
 Web Application Security Analyzer
+A partir de una URL ingresada, evalúa si contiene vulnerabilidades del tipo XSS y SQL Injection.
+Aplica Multi Threading para analizar las URL que encuentre en la web ingresada.
 
 # Instrucciones de Uso
 Primero el programa muestra un formulario, donde se debe completar con la URL a analizar, la cantidad maxima de threads y, opcionalmente, las cookies que se van a incluir en los requests.
