@@ -1,6 +1,7 @@
 # WebSecurity
 Web Application Security Analyzer
 
+# Instrucciones de Uso
 Primero el programa muestra un formulario, donde se debe completar con la URL a analizar, la cantidad maxima de threads y, opcionalmente, las cookies que se van a incluir en los requests.
 Luego del submit del formulario, el programa parsea la URL para obtener el dominio, carga la configuración de la base de datos del archivo config.xml e inserta un registro de análisis, obteniendo un id de ejecución. 
 Se fija si en la ejecución actual ya se analizó la URL en cuestión.
@@ -13,3 +14,13 @@ La respuesta del request se analiza con la clase DomDocument, buscando el tag as
 Si no es determinado como vulnerable, se prueba el mismo script e input, pero con un POST request, y se analiza la respuesta con el mismo procedimiento.
 Finalmente, solo para la URL analizada inicialmente, se crea un pool de threads (limitado por la cantidad de threads máximos ingresados) y se buscan todas las URL del mismo dominio. Por cada una encontrada, se lanza un thread, que repite el procedimiento desde el paso 3, pero obviando el 11.
 Se incluye archivo “payloads.txt” con posibles scripts a tratar de inyectar, que no están incluídos en el programa, pero bien podrían utilizarse. Utilizan diferentes técnicas para intentar evitar los filtros XSS.
+
+# Instalación
+
+# Pthreads 
+(http://php.net/manual/es/book.pthreads.php)
+El programa utiliza la API pthreads, que para poder ejecutar necesita que se habilite Zend Thread Safety.
+
+# Config.xml
+El programa requiere configurar los datos de acceso a la base de datos a utilizar (MySQL) en el archivo config.xml (host, user, password y db name).
+Este archivo requiere ubicarse en el directorio base del servidor (esto se realizo de esta forma ya que los diferentes threads no comparten contexto, por lo que requieren una direccion absoluta para encontrar el config), es decir, el programa lo accede con "http://localhost/config.xml"
